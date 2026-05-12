@@ -93,10 +93,16 @@ Important cautions:
 
 If you want a starting point instead of a blank configuration, review the preset
 profiles in Annex B and then tailor the activation block for your actual policy.
+If you want concrete filled-out activation blocks, start from the examples in
+[`examples/`](./examples/).
 
 ## Repository contents
 
+- [`CHANGELOG.md`](./CHANGELOG.md) — repository-level change history
+- [`CONTRIBUTING.md`](./CONTRIBUTING.md) — contribution and discussion guidance
 - [`MCL-LICENSE`](./MCL-LICENSE) — canonical license text
+- [`examples/`](./examples/) — filled-out Annex A examples for common policy
+  postures
 
 ## Legal note
 

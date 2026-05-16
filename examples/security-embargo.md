@@ -1,17 +1,20 @@
-# Internal-use-C example
+# Security-embargo example
 
-This example shows the public-covered-work release variant. It allows internal
-use only if the exact internally used covered work is published.
+This example shows a project that wants strong reciprocal publication duties,
+but also wants a controlled security-embargo workflow so trusted maintainers or
+operators can receive patches before the full source disclosure becomes public.
 
 ## Good fit
 
-- Projects that want strong transparency for internal forks of the covered work
-- Stewards that want private operation only on a publish-the-code basis
+- Security-sensitive infrastructure projects
+- Projects whose downstream maintainers need early defensive access
+- Stewards who want public publication after a bounded embargo window
 
 ## Bad fit
 
-- Organizations that need to keep internal covered-work modifications private
-- Projects that want integrated internal systems to remain fully out of scope
+- Projects seeking ordinary OSI-style open-source timing
+- Teams that want permanent private security branches
+- Projects without a real trusted-recipient workflow
 
 ## Filled Annex A
 
@@ -22,46 +25,47 @@ Modular Cooperative License v1.1
 ====================================================================
 
 Software Name:
-Signal Ledger
+Iron Gate Proxy
 
 Version or Release Identifier:
-1.8.0
+7.2.0
 
 Copyright Holder(s):
-Signal Ledger Foundation
+Iron Gate Systems, Inc.
 
 Contact for Legal Notices:
-legal@signalledger.example
+legal@irongateproxy.example
 
 Primary Public Repository:
-https://code.example/signal-ledger/core
+https://code.example/iron-gate/proxy
 
 Governing Law:
-Oregon, United States
+Virginia, United States
 
 Notification Method for MOD-PUB:
 [ ] Issue or pull request in the primary repository
-[ ] Email or web form identified below
+[x] Email or web form identified below
 [ ] Other durable written method described below
 Details:
-Not applicable because MOD-PUB is inactive.
+Use security-notices@irongateproxy.example for MOD-PUB and coordinated security
+release notices.
 
 ACTIVATED MODULES
 [ ] MOD-AI     Machine Learning Training Restriction
-[ ] MOD-BIN    Cloud Binary and Deployment Release
+[x] MOD-BIN    Cloud Binary and Deployment Release
 [ ] MOD-CLA    Contributor License Agreement and Relicensing
 [ ] MOD-COM    Commercial Non-Competing Restriction
 [x] MOD-DIST   Distribution Copyleft
 [x] MOD-FILE   File-Level Reciprocity
-[ ] MOD-INT-A  Internal Use, Permissive Variant
+[x] MOD-INT-A  Internal Use, Permissive Variant
 [ ] MOD-INT-B  Internal Use, Reciprocal Variant
-[x] MOD-INT-C  Internal Use, Public Covered-Work Release Variant
+[ ] MOD-INT-C  Internal Use, Public Covered-Work Release Variant
 [ ] MOD-INT-D  Internal Use, Public Integrated-System Release Variant
 [x] MOD-NET    Network and SaaS Copyleft
 [x] MOD-PAT    Patent Retaliation and Enhanced Termination
 [x] MOD-PLUG   Plugin, Boundary, and Anti-Shim Enforcement
-[ ] MOD-PUB    Public Fork Requirement
-[ ] MOD-SEC    Security Embargo and Trusted Disclosure
+[x] MOD-PUB    Public Fork Requirement
+[x] MOD-SEC    Security Embargo and Trusted Disclosure
 [ ] MOD-STAGE  Staged Preview and Deferred Publication
 [ ] MOD-SUB    Sublicensing Permission
 
@@ -71,23 +75,26 @@ Not applicable because MOD-COM is inactive.
 
 MOD-PLUG CONFIGURATION
 Documented Extension API Location:
-https://developer.signalledger.example/extensions
+https://developer.irongateproxy.example/extensions
 
 Integral Component Designations Beyond the Default Definition:
 See INTEGRAL_COMPONENTS.md
 
 MOD-SEC CONFIGURATION
 Trusted Actor Categories:
-Not applicable because MOD-SEC is inactive.
+Downstream Linux distribution maintainers, managed service operators, and
+contracted incident-response partners under written security coordination terms.
 
 Maximum Embargo Window:
-Not applicable because MOD-SEC is inactive.
+14 days.
 
 Security Publication Trigger:
-Not applicable because MOD-SEC is inactive.
+The earliest of full public release of the patched version, 80 percent rollout
+of the hosted fix, or expiration of the 14-day embargo window.
 
 Permitted Non-Public Materials:
-Not applicable because MOD-SEC is inactive.
+Source patches, patched binaries, mitigation instructions, deployment notes, and
+non-secret operational materials reasonably necessary for defensive rollout.
 
 MOD-STAGE CONFIGURATION
 Permitted Preview Channels or Recipients:
@@ -110,6 +117,6 @@ Permitted Relicensing Scope:
 Not applicable because MOD-CLA is inactive.
 
 ADDITIONAL PROJECT-SPECIFIC CLARIFICATIONS
-Public release of the exact internally used covered-work version is expected no
-later than 30 days after first internal operation.
+MOD-SEC is intended only for defensive patch coordination and may not be used to
+withhold ordinary product features or roadmap work.
 ```

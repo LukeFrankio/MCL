@@ -1,17 +1,21 @@
-# Internal-use-C example
+# File-copyleft example
 
-This example shows the public-covered-work release variant. It allows internal
-use only if the exact internally used covered work is published.
+This example shows the weak reciprocal layer in MCL v1.1. It activates
+`MOD-FILE` so distributed modified files stay under MCL and their source is made
+available, while the larger surrounding work does not automatically become
+whole-work copyleft.
 
 ## Good fit
 
-- Projects that want strong transparency for internal forks of the covered work
-- Stewards that want private operation only on a publish-the-code basis
+- Projects that want weak or file-level reciprocity
+- Stewards who want something closer to MPL-style behavior than full copyleft
+- Teams that liked the old v1.0 baseline and want to restore it explicitly
 
 ## Bad fit
 
-- Organizations that need to keep internal covered-work modifications private
-- Projects that want integrated internal systems to remain fully out of scope
+- Projects that want the permissive no-module floor
+- Projects that want full distribution copyleft or network copyleft
+- Projects that want stronger commercial or internal-use restrictions
 
 ## Filled Annex A
 
@@ -22,19 +26,19 @@ Modular Cooperative License v1.1
 ====================================================================
 
 Software Name:
-Signal Ledger
+Quartz Forms
 
 Version or Release Identifier:
-1.8.0
+1.2.0
 
 Copyright Holder(s):
-Signal Ledger Foundation
+Quartz Forms Collective
 
 Contact for Legal Notices:
-legal@signalledger.example
+legal@quartzforms.example
 
 Primary Public Repository:
-https://code.example/signal-ledger/core
+https://code.example/quartz/forms
 
 Governing Law:
 Oregon, United States
@@ -51,15 +55,15 @@ ACTIVATED MODULES
 [ ] MOD-BIN    Cloud Binary and Deployment Release
 [ ] MOD-CLA    Contributor License Agreement and Relicensing
 [ ] MOD-COM    Commercial Non-Competing Restriction
-[x] MOD-DIST   Distribution Copyleft
+[ ] MOD-DIST   Distribution Copyleft
 [x] MOD-FILE   File-Level Reciprocity
 [ ] MOD-INT-A  Internal Use, Permissive Variant
 [ ] MOD-INT-B  Internal Use, Reciprocal Variant
-[x] MOD-INT-C  Internal Use, Public Covered-Work Release Variant
+[ ] MOD-INT-C  Internal Use, Public Covered-Work Release Variant
 [ ] MOD-INT-D  Internal Use, Public Integrated-System Release Variant
-[x] MOD-NET    Network and SaaS Copyleft
-[x] MOD-PAT    Patent Retaliation and Enhanced Termination
-[x] MOD-PLUG   Plugin, Boundary, and Anti-Shim Enforcement
+[ ] MOD-NET    Network and SaaS Copyleft
+[ ] MOD-PAT    Patent Retaliation and Enhanced Termination
+[ ] MOD-PLUG   Plugin, Boundary, and Anti-Shim Enforcement
 [ ] MOD-PUB    Public Fork Requirement
 [ ] MOD-SEC    Security Embargo and Trusted Disclosure
 [ ] MOD-STAGE  Staged Preview and Deferred Publication
@@ -71,10 +75,10 @@ Not applicable because MOD-COM is inactive.
 
 MOD-PLUG CONFIGURATION
 Documented Extension API Location:
-https://developer.signalledger.example/extensions
+Not applicable because MOD-PLUG is inactive.
 
 Integral Component Designations Beyond the Default Definition:
-See INTEGRAL_COMPONENTS.md
+Not applicable because MOD-PLUG is inactive.
 
 MOD-SEC CONFIGURATION
 Trusted Actor Categories:
@@ -110,6 +114,7 @@ Permitted Relicensing Scope:
 Not applicable because MOD-CLA is inactive.
 
 ADDITIONAL PROJECT-SPECIFIC CLARIFICATIONS
-Public release of the exact internally used covered-work version is expected no
-later than 30 days after first internal operation.
+Distributed modified files remain under MCL when MOD-FILE is active, but the
+surrounding larger work is not subject to whole-work copyleft by this module
+alone.
 ```

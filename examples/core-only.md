@@ -1,25 +1,25 @@
 # Core-only example
 
-This example shows the lightest MCL posture: the core terms only, with no
-optional modules activated.
+This example shows the most permissive MCL v1.1 posture: the base terms only,
+with no optional modules activated.
 
 ## Good fit
 
-- Small or early-stage projects that want the MCL baseline only
-- Projects that want to start conservatively and add modules later
+- Projects that want the permissive, MIT-like end of the MCL framework
+- Projects that want to start permissively and add modules later
 
 ## Bad fit
 
-- Projects that want strong SaaS reciprocity
-- Projects that want cloud-binary publication, anti-shim enforcement, or
-  commercial restrictions
+- Projects that want file-level reciprocity for distributed modifications
+- Projects that want strong SaaS reciprocity, cloud-binary publication,
+  anti-shim enforcement, or commercial restrictions
 
 ## Filled Annex A
 
 ```text
 ====================================================================
 LICENSE ACTIVATION BLOCK
-Modular Cooperative License v1.0
+Modular Cooperative License v1.1
 ====================================================================
 
 Software Name:
@@ -53,13 +53,17 @@ ACTIVATED MODULES
 [ ] MOD-CLA    Contributor License Agreement and Relicensing
 [ ] MOD-COM    Commercial Non-Competing Restriction
 [ ] MOD-DIST   Distribution Copyleft
+[ ] MOD-FILE   File-Level Reciprocity
 [ ] MOD-INT-A  Internal Use, Permissive Variant
 [ ] MOD-INT-B  Internal Use, Reciprocal Variant
 [ ] MOD-INT-C  Internal Use, Public Covered-Work Release Variant
 [ ] MOD-INT-D  Internal Use, Public Integrated-System Release Variant
 [ ] MOD-NET    Network and SaaS Copyleft
+[ ] MOD-PAT    Patent Retaliation and Enhanced Termination
 [ ] MOD-PLUG   Plugin, Boundary, and Anti-Shim Enforcement
 [ ] MOD-PUB    Public Fork Requirement
+[ ] MOD-SEC    Security Embargo and Trusted Disclosure
+[ ] MOD-STAGE  Staged Preview and Deferred Publication
 [ ] MOD-SUB    Sublicensing Permission
 
 MOD-COM CONFIGURATION
@@ -72,6 +76,32 @@ Not applicable because MOD-PLUG is inactive.
 
 Integral Component Designations Beyond the Default Definition:
 Not applicable because MOD-PLUG is inactive.
+
+MOD-SEC CONFIGURATION
+Trusted Actor Categories:
+Not applicable because MOD-SEC is inactive.
+
+Maximum Embargo Window:
+Not applicable because MOD-SEC is inactive.
+
+Security Publication Trigger:
+Not applicable because MOD-SEC is inactive.
+
+Permitted Non-Public Materials:
+Not applicable because MOD-SEC is inactive.
+
+MOD-STAGE CONFIGURATION
+Permitted Preview Channels or Recipients:
+Not applicable because MOD-STAGE is inactive.
+
+Maximum Staging Window:
+Not applicable because MOD-STAGE is inactive.
+
+Staged Publication Trigger:
+Not applicable because MOD-STAGE is inactive.
+
+Abandoned Preview Rule:
+Not applicable because MOD-STAGE is inactive.
 
 MOD-CLA CONFIGURATION
 CLA Location:

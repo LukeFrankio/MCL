@@ -1,7 +1,7 @@
 # Modular Cooperative License
 
 The Modular Cooperative License, or MCL, is a modular software license
-framework. In v1.1, it can be configured from a permissive, MIT-like floor to
+framework. In v1.1.1, it can be configured from a permissive, MIT-like floor to
 profiles that are more restrictive than AGPLv3. Optional modules let a
 Licensor choose how aggressively the license responds to distribution,
 file-level reciprocity, SaaS use, cloud binary publication, patent retaliation,
@@ -39,7 +39,7 @@ MCL has two layers:
 
 In practice, that means the same base license text can support several policy
 profiles without forcing every project into the same posture. With no modules
-activated, v1.1 is the permissive floor. Activating `MOD-FILE` restores a weak
+activated, v1.1.1 is the permissive floor. Activating `MOD-FILE` restores a weak
 file-level reciprocity baseline, and stronger modules push further from there.
 
 Annex B includes example presets, but the actual legal effect always comes from
@@ -72,12 +72,12 @@ the completed activation block in Annex A.
 MCL is a custom license. It is not identical to GPL-3.0, AGPL-3.0, Apache-2.0,
 or any other stewarded license.
 
-The no-module v1.1 floor is the permissive end of the framework. `MOD-FILE`
+The no-module v1.1.1 floor is the permissive end of the framework. `MOD-FILE`
 adds weak reciprocity. Stronger modules can then push the license well beyond
 ordinary copyleft.
 
-The current license text includes a conditional GPLv3 and AGPLv3 compatibility
-bridge for qualifying activation profiles. That bridge is unavailable when
+The current license text includes conditional GPLv3 and AGPLv3 compatibility
+bridges for qualifying activation profiles. Those bridges are unavailable when
 certain blocker modules are active.
 
 Important cautions:
@@ -88,9 +88,12 @@ Important cautions:
 - `MOD-STAGE` is not open source in the OSI sense
 - profiles that activate `MOD-AI`, `MOD-BIN`, `MOD-COM`, `MOD-INT-B`,
   `MOD-INT-C`, `MOD-INT-D`, `MOD-PUB`, `MOD-SEC`, or `MOD-STAGE` do not use
-  the GPLv3 or AGPLv3 compatibility bridge
+  the AGPLv3 bridge
+- profiles that activate `MOD-NET` do not use the GPLv3 bridge, but may still
+  use the AGPLv3 bridge if no other blocker modules are active
 - `MOD-CLA`, `MOD-DIST`, `MOD-FILE`, `MOD-INT-A`, `MOD-NET`, `MOD-PAT`,
-  `MOD-PLUG`, and `MOD-SUB` do not by themselves disable that bridge
+  `MOD-PLUG`, and `MOD-SUB` do not by themselves disable the relevant bridge,
+  except that `MOD-NET` is AGPL-only for compatibility purposes
 - the compatibility section in [`MCL-LICENSE`](./MCL-LICENSE) is the governing
   text for actual use
 
@@ -110,7 +113,7 @@ Important cautions:
 
 If you want a starting point instead of a blank configuration, review the preset
 profiles in Annex B and then tailor the activation block for your actual policy.
-In v1.1, no modules gives you the permissive floor, while `MOD-FILE` gives you
+In v1.1.1, no modules gives you the permissive floor, while `MOD-FILE` gives you
 the weak file-level copyleft layer that older MCL drafts treated as the
 baseline.
 If you want concrete filled-out activation blocks, start from the examples in

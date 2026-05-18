@@ -1,6 +1,6 @@
 # File-copyleft example
 
-This example shows the weak reciprocal layer in MCL v1.1. It activates
+This example shows the weak reciprocal layer in MCL v1.1.1. It activates
 `MOD-FILE` so distributed modified files stay under MCL and their source is made
 available, while the larger surrounding work does not automatically become
 whole-work copyleft.
@@ -22,7 +22,7 @@ whole-work copyleft.
 ```text
 ====================================================================
 LICENSE ACTIVATION BLOCK
-Modular Cooperative License v1.1
+Modular Cooperative License v1.1.1
 ====================================================================
 
 Software Name:
@@ -67,7 +67,7 @@ ACTIVATED MODULES
 [ ] MOD-PUB    Public Fork Requirement
 [ ] MOD-SEC    Security Embargo and Trusted Disclosure
 [ ] MOD-STAGE  Staged Preview and Deferred Publication
-[ ] MOD-SUB    Sublicensing Permission
+[ ] MOD-SUB    Steward Alternative Licensing Authority
 
 MOD-COM CONFIGURATION
 Primary Commercial Function:

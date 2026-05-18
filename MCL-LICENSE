@@ -1,8 +1,8 @@
 MODULAR COOPERATIVE LICENSE (MCL)
-Version 1.1
+Version 1.1.1
 Consolidated Normative Text
 
-Suggested SPDX expression until official registration: LicenseRef-MCL-1.1
+Suggested SPDX expression until official registration: LicenseRef-MCL-1.1.1
 
 0. PURPOSE
 
@@ -278,9 +278,15 @@ legal entity. Joint ventures, customers, channel partners, franchisees,
 resellers, and partially owned affiliates are third parties unless Annex A
 expressly says otherwise.
 
+Synchronous generation or delivery of Static Disconnected Work Product on behalf
+of a third party does not by itself constitute materially live
+request/response access, provided the third party does not receive direct or
+iterative control over the Covered Work beyond ordinary instructions reasonably
+necessary to produce the fixed deliverable.
+
 2.16 License
 
-License means this Modular Cooperative License, version 1.1, together with the
+License means this Modular Cooperative License, version 1.1.1, together with the
 Modules identified as active in Annex A for the relevant copy or deployment.
 
 2.17 Licensor
@@ -316,10 +322,15 @@ adjustment, or comparable systematic improvement.
 
 Model Training Use does not include ordinary compilation, execution, caching,
 search, indexing, deduplication, syntax highlighting, static analysis, security
-scanning, format conversion, or ephemeral inference-time processing, including
-prompt or context submission, provided that the Covered Work is not retained or
-used to update model parameters, weights, persistent training corpora, or
-comparable optimization state.
+scanning, format conversion, or ordinary ephemeral inference-time processing,
+including limited prompt or context submission for debugging, review,
+refactoring, explanation, security analysis, or comparable development
+assistance, provided that the Covered Work is not retained or used to update
+model parameters, weights, persistent training corpora, or comparable
+optimization state, and is not supplied in whole or material part as a prompt,
+context, retrieval corpus, generative template, or comparable source for the
+primary purpose of producing a substitute implementation, substantially similar
+codebase, or architecture clone.
 
 2.20 Network Use
 
@@ -343,6 +354,14 @@ attestations, SBOMs, startup logic, and environment-variable definitions that
 an Ordinarily Skilled Technical Person would ordinarily require to reproduce a
 substantially equivalent deployment or runtime environment for the exact version
 being operated.
+
+Operational Materials need not disclose provider-assigned resource identifiers,
+account numbers, tenant identifiers, private hostnames or addresses, secret
+internal endpoints, or comparable environment-specific binding details,
+provided the materials disclose the structural roles, relationships, and
+replacement points needed for an Ordinarily Skilled Technical Person to
+reproduce a substantially equivalent deployment using that person's own
+environment-specific values.
 
 2.23 Ordinarily Skilled Technical Person
 
@@ -384,6 +403,12 @@ Separate Work means a component that satisfies all of the following criteria:
     an indispensable part of a Unified Product for the Covered Work's core
     function.
 
+For item (a), user-controlled standard file or data exchange does not include
+standard output, standard error, log streams, telemetry feeds, or comparable
+channels when they are used in practice as a control path for authentication,
+authorization, metering, feature gating, approval, or other material governance
+of the Covered Work.
+
 A Separate Work is not subject to the copyleft obligations of this License only
 by reason of integration through a qualifying boundary. The party claiming the
 status of Separate Work bears the burden of proving every element of this
@@ -420,6 +445,13 @@ generated using the Covered Work that satisfies all of the following:
     Covered Work other than ordinary viewing, storage, printing, copying, or
     transmission of the fixed deliverable itself.
 
+A deliverable is not Static Disconnected Work Product if it contains or
+embodies a material portion of the Covered Work's Object Code, bytecode,
+WebAssembly, or comparable compiled application logic intended for substantial
+ongoing execution or interaction on the recipient's system, other than
+incidental client-side code reasonably necessary to view or use a fixed
+deliverable.
+
 A deliverable is not Static Disconnected Work Product merely because it is
 labeled an export, report, snapshot, attachment, or document if the recipient is
 effectively receiving interactive, iterative, parameterized, or on-demand
@@ -446,9 +478,21 @@ Strong evidence of a Unified Product includes any two or more of the following:
 (f) a practical inability for users to obtain the primary value of the offering
     without the combined operation of those components.
 
+These factors are non-exhaustive. Deliberate avoidance or dilution of one or
+more factors does not by itself defeat Unified Product status where the actual
+functional, commercial, or operational reality is that the components are
+presented or operated as one product or service.
+
 2.32 You
 
 You means any individual or legal entity exercising rights under this License.
+
+For Clause 3.3 and Clause 6.17, You also includes any entity that controls, is
+controlled by, or is under common control with the relevant legal entity. For
+this paragraph, control means (a) the direct or indirect power to cause the
+direction or management of the entity, whether by contract or otherwise,
+(b) ownership of fifty percent (50%) or more of the outstanding shares or other
+beneficial interests of the entity, or (c) beneficial ownership of the entity.
 
 3. CORE GRANTS
 
@@ -558,6 +602,12 @@ MOD-DIST is separately marked.
 If MOD-BIN is active for a version, MOD-NET is deemed active for that same
 version whether or not MOD-NET is separately marked.
 
+Where a Cloud Deployment also qualifies as Internal Use under an active
+MOD-INT-A, MOD-INT-B, MOD-INT-C, or MOD-INT-D, deeming MOD-NET active under
+this Clause does not by itself convert that deployment into third-party Network
+Use or enlarge disclosure duties beyond those expressly imposed by MOD-BIN and
+the applicable MOD-INT variant.
+
 5.4 MOD-SEC and MOD-STAGE Temporary Publication Exceptions
 
 If MOD-SEC or MOD-STAGE is active for a version, the otherwise applicable
@@ -566,6 +616,11 @@ deferred only to the limited extent and for the limited duration expressly
 authorized by the active Module and the corresponding Annex A configuration.
 Outside that limited exception, all otherwise applicable obligations continue to
 apply.
+
+If MOD-SEC and MOD-NET are both active for a version and a deployed change
+qualifies as an Embargoed Security Change, the timing expressly authorized by
+MOD-SEC and the corresponding Annex A configuration controls over the 72-hour
+completion rule in Clause 6.2(f).
 
 5.5 Internal Use Variants
 
@@ -634,7 +689,11 @@ When MOD-NET is active:
 (f) if an emergency security patch is deployed before the public materials are
     ready, the public materials MUST be completed within 72 hours after public
     deployment of that patch, together with a notice that an emergency delay
-    occurred; and
+    occurred, unless MOD-SEC is active for the relevant version and the
+    deployed change qualifies as an Embargoed Security Change, in which case
+    the timing authorized by MOD-SEC and the corresponding Annex A
+    configuration controls and the eventual public materials MUST disclose that
+    the security delay occurred; and
 (g) the Licensee MUST publish and maintain the Compliance Record required by
     Annex C for the exact version in operation.
 
@@ -651,12 +710,21 @@ When MOD-BIN is active:
     together with integrity digests for those artifacts;
 (b) You MUST provide a reproducible build recipe sufficient for an Ordinarily
     Skilled Technical Person to reproduce substantially equivalent deployable
-    artifacts from the Corresponding Source;
+    artifacts from the Corresponding Source. A recipe is not sufficient if it
+    depends on a non-public base image, non-public binary, or non-public build
+    service, or if ordinary operation of the deployed artifact depends on
+    non-public hardware attestation roots, non-public enclave identities,
+    non-public cryptographic binding materials, or comparable account-bound or
+    infrastructure-bound trust anchors, unless the publication also includes
+    that dependency or instructions sufficient to construct, replace, or
+    substitute a functionally equivalent public alternative;
 (c) You MUST provide the Operational Materials for the exact deployed version,
     including environment-variable names, expected types, example non-secret
     values or placeholders, orchestration files, infrastructure definitions,
     policy files, dependency locks, and comparable non-secret deployment
-    materials;
+    materials. Account-specific, tenant-specific, or provider-assigned
+    identifiers MAY be replaced with placeholders or role descriptions so long
+    as the structural deployment relationships remain reproducible;
 (d) a publication that omits materials required by items (a) through (c) such
     that an Ordinarily Skilled Technical Person cannot reproduce a substantially
     equivalent deployment is a material breach of this License;
@@ -666,7 +734,18 @@ When MOD-BIN is active:
 (f) if MOD-NET is active, the materials required by this Clause SHOULD be
     published on the same repository or public service used for MOD-NET
     compliance unless a different durable location is clearly disclosed in the
-    Compliance Record.
+    Compliance Record; and
+(g) if the relevant Cloud Deployment also qualifies as Internal Use under an
+    active MOD-INT-A or MOD-INT-B, the materials required by this Clause need
+    not be made publicly available solely by reason of that internal
+    deployment, but they MUST be made practically available to the employees
+    and contractors who use, operate, or maintain the deployment. If the
+    relevant Cloud Deployment qualifies as Internal Use under MOD-INT-C or
+    MOD-INT-D, the public-release duties of that active MOD-INT variant
+    satisfy the public-availability requirement of this Clause for that
+    internal deployment, provided the deployable artifacts and Operational
+    Materials required by this Clause are included to the extent necessary for
+    substantially equivalent reproduction.
 
 6.4 MOD-PUB -- Public Fork Requirement
 
@@ -697,7 +776,17 @@ When MOD-PUB is active:
 (g) an internal development branch created solely to prepare a contribution back
     to the Licensor's primary line of development is exempt from items (a)
     through (e) for up to 180 days, provided that it is either contributed or
-    discarded by the end of that period.
+    discarded by the end of that period; and
+(h) a private Fork created solely for good-faith experimental evaluation,
+    feasibility testing, or discarded exploratory work is exempt from items (a)
+    through (e) if it is never Distributed, never made available for Network Use
+    to any third party, never used in production, and is permanently discarded
+    within 90 days after the first Material Modification to that Fork; and
+(i) if MOD-INT-A or MOD-INT-B is active, a Fork that remains strictly Internal
+    Use is exempt from items (a) through (e) for as long as that status
+    continues. If that Fork later ceases to qualify as Internal Use, the 90-day
+    period in item (a) begins on the date that Internal Use status ceases,
+    unless an earlier non-exempt event already started that period.
 
 6.5 MOD-PLUG -- Plugin, Boundary, and Anti-Shim Enforcement
 
@@ -735,7 +824,7 @@ When MOD-PLUG is active:
 
 6.6 MOD-INT-A -- Internal Use, Permissive Variant
 
-Purpose: To permit Internal Use without public reciprocity beyond the Core
+Purpose: To permit Internal Use without public reciprocity beyond the Base
 Terms.
 
 When MOD-INT-A is active:
@@ -880,8 +969,16 @@ When MOD-AI is active:
 (d) this Module does not prohibit ordinary compilation, execution, caching,
     search, indexing, syntax highlighting, static analysis, security scanning,
     format conversion, or ephemeral inference-time processing that is not Model
-    Training Use; and
-(e) MOD-AI adds a field-of-use restriction and is therefore not open source in
+    Training Use;
+(e) this Module does not prohibit ordinary interactive development assistance,
+    including prompt or context submission to a debugging, review,
+    refactoring, explanation, or security-analysis tool, merely because the
+    provider transiently stores submissions or uses them for logging, abuse
+    prevention, or comparable service operations, provided the Licensee does
+    not separately opt into, request, or contract for training, fine-tuning,
+    corpus ingestion, or comparable model-improvement use of the Covered Work;
+    and
+(f) MOD-AI adds a field-of-use restriction and is therefore not open source in
     the OSI sense.
 
 6.12 MOD-SEC -- Security Embargo and Trusted Disclosure
@@ -939,7 +1036,10 @@ When MOD-STAGE is active:
 (e) a staged branch or feature that is abandoned and never made available
     beyond the preview recipient categories or channels identified in Annex A
     MAY be discarded without separate public publication unless Annex A
-    expressly says otherwise;
+    expressly says otherwise. A sequence of nominally abandoned staged branches,
+    releases, or feature lines that provides substantially continuous early
+    access to substantially the same core features is presumed an evasion under
+    Clause 7.6 and does not qualify for private discard under this item;
 (f) a party invoking this Module MUST NOT use it to maintain a de facto
     permanent non-public Fork or to label a generally available release as a
     preview merely to avoid the reciprocal obligations of this License; and
@@ -987,7 +1087,10 @@ When MOD-CLA is active:
     holds sufficient rights to do so;
 (e) if the Licensor proposes to relicense Contributions for which no CLA grants
     the required authority, the Licensor MUST provide at least 90 days of public
-    notice and, if an affected Contributor objects in writing within that period,
+    notice, MUST make reasonable efforts to provide direct notice to each
+    affected Contributor at the last contact information reasonably available to
+    the Licensor, and, if an affected Contributor objects in writing within that
+    period,
     the Licensor MUST either:
 
     (i)   exclude that Contributor's affected Contribution from the relicensed
@@ -1030,11 +1133,19 @@ aggression.
 When MOD-PAT is active:
 
 (a) if You initiate patent litigation, including a cross-claim or counterclaim,
-    alleging that the Covered Work or a Contribution incorporated in it
-    constitutes patent infringement, then any and all rights granted to You
-    under this License for the Covered Work, including copyright and patent
-    grants, terminate automatically as of the date that litigation is filed;
-    and
+    alleging either:
+
+    (i)   that the Covered Work or a Contribution incorporated in it
+        constitutes patent infringement; or
+    (ii)  that a Licensor's or Contributor's development, distribution,
+        licensing, operation, or commercialization of the Covered Work, or of
+        a product, service, or implementation that materially incorporates or
+        is materially based on the Covered Work, constitutes patent
+        infringement,
+
+    then any and all rights granted to You under this License for the Covered
+    Work, including copyright and patent grants, terminate automatically as of
+    the date that litigation is filed; and
 (b) termination under item (a) is not subject to automatic reinstatement under
     Clause 8.2 and may be reinstated only by the express written agreement of
     the relevant rights holders.
@@ -1044,10 +1155,20 @@ When MOD-PAT is active:
 7.1 General-Purpose Tool Safe Harbor
 
 A General-Purpose Tool is not an Integral Component merely because the Covered
-Work runs on it, stores data in it, or is administered through it. However, a
-specific customized module, plugin, adapter, policy, or service built on top of
-a General-Purpose Tool may still be an Integral Component if it satisfies
-Clause 2.14.
+Work runs on it, stores data in it, or is administered through it. Mere
+configuration of a General-Purpose Tool using ordinary routing, logging,
+observability, rate-limiting, access-control, or deployment settings does not
+by itself make the tool or its configuration an Integral Component. However, a
+specific customized module, plugin, adapter, policy, rule set, or service built
+on top of a General-Purpose Tool may still be an Integral Component if it
+satisfies Clause 2.14, especially where it is principally designed to enable,
+gate, meter, authorize, or materially alter a core function of the Covered Work
+or its Unified Product.
+
+A Covered-Work-specific script, policy, filter, or rule set that materially
+implements authentication, metering, feature gating, approval, or comparable
+core control for the Covered Work is not exempt merely because it is expressed
+in a configuration language or hosted inside a General-Purpose Tool.
 
 7.2 Separate Work Objective Tests
 
@@ -1119,9 +1240,22 @@ Where MOD-NET or MOD-BIN is active, the Compliance Record MUST remain publicly
 available for as long as the relevant version is in public Network Use and for at
 least 12 months after that public operation ceases.
 
+However, if the relevant public operation lasted no more than 30 consecutive
+days, was expressly labeled test, preview, beta, evaluation, or comparable
+non-production use, accepted no payment for access, and was not marketed as a
+generally available service, retention for 30 days after cessation is
+sufficient.
+
+For elastic, ephemeral, or autoscaled deployments, a stable public service URL,
+API root, or network endpoint description for the relevant service class is
+sufficient. Individual transient instance URLs, hostnames, or per-session
+endpoints need not be separately published or retained unless they are the only
+publicly meaningful way to identify the running service.
+
 7.8 Evidentiary Burden
 
-The party asserting any of the following bears the burden of proof:
+To the maximum extent permitted by applicable law, the party asserting any of
+the following bears the burden of proof:
 
 (a) that a component is a Separate Work;
 (b) that use qualifies as Internal Use;
@@ -1170,8 +1304,11 @@ written notice of it, whichever occurs first, Your rights are reinstated
 retroactively only if this Clause 8.2 has not previously reinstated Your rights
 with respect to the relevant Covered Work and the Licensor has not already
 obtained a final judgment or entered into a final written settlement expressly
-terminating those rights for that breach. Any later reinstatement requires the
-Licensor's express written agreement.
+terminating those rights for that breach. Reinstatement under this Clause does
+not extinguish liability or remedies for breach occurring before cure,
+including damages, disgorgement, accounting, restitution, or comparable
+monetary relief to the extent otherwise available under applicable law. Any
+later reinstatement requires the Licensor's express written agreement.
 
 8.3 Good-Faith Negotiation
 
@@ -1202,13 +1339,19 @@ right.
 9.1 SPDX Guidance
 
 Until this License receives an official SPDX identifier, users SHOULD refer to it
-as LicenseRef-MCL-1.1 in SPDX expressions and machine-readable metadata.
+as LicenseRef-MCL-1.1.1 in SPDX expressions and machine-readable metadata.
 
 9.2 Compatibility Policy
 
 This License grants permissions only as to rights held by the Licensor and
 Contributors. It does not alter or override conditions imposed by third-party
 licenses on third-party material.
+
+Where third-party material is combined with the Covered Work, conditions imposed
+by an active Module govern only the MCL-covered material and any derivative or
+combined portions to the extent permitted by applicable law. They do not by
+themselves rewrite the operative terms governing the third-party material
+itself.
 
 Accordingly:
 
@@ -1220,41 +1363,56 @@ Accordingly:
 (c) this License makes no claim of compatibility with GPLv2-only code or with
     GNU-family licenses earlier than version 3;
 (d) for GPLv3 and AGPLv3 compatibility, this License distinguishes between
-    qualifying profiles and blocker profiles;
-(e) a qualifying profile is an activation profile in which none of the
+    GPLv3-qualifying profiles, AGPLv3-qualifying profiles, and blocker
+    profiles;
+(e) a GPLv3-qualifying profile is an activation profile in which none of the
+    following Modules is active: MOD-AI, MOD-BIN, MOD-COM, MOD-INT-B,
+    MOD-INT-C, MOD-INT-D, MOD-NET, MOD-PUB, MOD-SEC, or MOD-STAGE;
+(f) an AGPLv3-qualifying profile is an activation profile in which none of the
     following Modules is active: MOD-AI, MOD-BIN, MOD-COM, MOD-INT-B,
     MOD-INT-C, MOD-INT-D, MOD-PUB, MOD-SEC, or MOD-STAGE;
-(f) MOD-CLA, MOD-DIST, MOD-FILE, MOD-NET, MOD-INT-A, MOD-PAT, MOD-PLUG, and
-    MOD-SUB do not by themselves disable the compatibility bridge granted in
-    Clause 9.3; and
-(g) a blocker profile is any activation profile in which one or more blocker
-    Modules identified in item (e) is active. For a blocker profile, this
-    License makes no claim of GPLv3 or AGPLv3 compatibility unless the relevant
-    rights holders separately grant it.
+(g) MOD-CLA, MOD-DIST, MOD-FILE, MOD-INT-A, MOD-PAT, MOD-PLUG, and MOD-SUB do
+    not by themselves disable either compatibility bridge, and MOD-NET does not
+    by itself disable the AGPLv3 compatibility bridge; and
+(h) a blocker profile is any activation profile that is neither GPLv3-
+    qualifying nor AGPLv3-qualifying because one or more blocker Modules
+    identified above is active. For a blocker profile, this License makes no
+    claim of GPLv3 or AGPLv3 compatibility unless the relevant rights holders
+    separately grant it.
 
 9.3 GPLv3 and AGPLv3 Compatibility Permission
 
-When and only when the relevant activation profile is a qualifying profile under
-Clause 9.2, each Licensor grants the following additional permission:
+Each Licensor grants the following additional permissions only in the cases
+identified below:
 
-(a) the Covered Work may be combined with material under GPLv3, or any later GNU
-    GPL version that the relevant GPL-covered material validly permits, and the
-    resulting combined work may be conveyed under that GPL version;
-(b) the Covered Work may be combined with material under AGPLv3, or any later
-    GNU AGPL version that the relevant AGPL-covered material validly permits,
-    and the resulting combined work may be conveyed under that AGPL version;
+(a) when and only when the relevant activation profile is GPLv3-qualifying
+    under Clause 9.2(e), the Covered Work may be combined with material under
+    GPLv3, or any later GNU GPL version that the relevant GPL-covered material
+    validly permits, and the resulting combined work may be conveyed under that
+    GPL version;
+(b) when and only when the relevant activation profile is AGPLv3-qualifying
+    under Clause 9.2(f), the Covered Work may be combined with material under
+    AGPLv3, or any later GNU AGPL version that the relevant AGPL-covered
+    material validly permits, and the resulting combined work may be conveyed
+    under that AGPL version;
 (c) the permission in items (a) and (b) includes permission for recipients of a
     qualifying combined copy to modify, convey, and redistribute the MCL-covered
-    portions of that copy under the selected GPLv3 or AGPLv3 terms, including
-    after removal of other portions of the combined work;
+    portions of that copy under the same GPLv3 or AGPLv3 terms selected under
+    item (a) or item (b), respectively, including after removal of other
+    portions of the combined work;
 (d) for a qualifying combined copy conveyed under item (a) or (b), compliance
-    with the selected GPLv3 or AGPLv3 terms is sufficient for that conveyed
-    copy, and any MCL term that would otherwise operate as an additional
-    restriction on that conveyed copy is waived to the minimum extent necessary
-    to preserve that GPLv3 or AGPLv3 compatibility path; and
+    with the GPLv3 or AGPLv3 terms selected under that item is sufficient for
+    that conveyed copy, and any MCL term that would otherwise operate as an
+    additional restriction on that conveyed copy is waived to the minimum extent
+    necessary to preserve that same GPLv3 or AGPLv3 compatibility path; and
 (e) nothing in this Clause grants GPLv3 or AGPLv3 rights for a separately
     conveyed MCL-only copy that does not descend from a qualifying combined copy,
-    except to the extent a Licensor separately grants such rights.
+    except to the extent a Licensor separately grants such rights; and
+(f) the permissions and waivers in this Clause apply only to qualifying
+    combined copies and downstream copies that continue to descend from them
+    under the same selected GNU license path. They do not authorize stripping
+    MCL terms from an MCL-only copy conveyed outside that path or from a
+    profile that was not qualifying at the time of the relevant combination.
 
 9.4 Application Steps
 
@@ -1334,7 +1492,7 @@ activation state.
 
 ====================================================================
 LICENSE ACTIVATION BLOCK
-Modular Cooperative License v1.1
+Modular Cooperative License v1.1.1
 ====================================================================
 
 Software Name:
@@ -1372,7 +1530,7 @@ ACTIVATED MODULES
 [ ] MOD-PUB    Public Fork Requirement
 [ ] MOD-SEC    Security Embargo and Trusted Disclosure
 [ ] MOD-STAGE  Staged Preview and Deferred Publication
-[ ] MOD-SUB    Sublicensing Permission
+[ ] MOD-SUB    Steward Alternative Licensing Authority
 
 MOD-COM CONFIGURATION
 Primary Commercial Function:
@@ -1442,8 +1600,9 @@ MOD-BIN, MOD-CLA, MOD-DIST, MOD-INT-A, MOD-NET, MOD-PAT, MOD-PLUG,
 MOD-PUB
 
 Profile:
-Maximum public reciprocity for Distribution, Network Use, binaries, and private
-Forks, together with explicit anti-shim and CLA infrastructure.
+Maximum public reciprocity for Distribution, third-party Network Use, binaries,
+and non-internal private Forks, together with explicit anti-shim and CLA
+infrastructure and permissive internal-only use under MOD-INT-A.
 
 B.2 MCL-COOPERATIVE
 
@@ -1452,8 +1611,9 @@ MOD-BIN, MOD-CLA, MOD-COM, MOD-DIST, MOD-INT-A, MOD-NET, MOD-PAT,
 MOD-PLUG, MOD-PUB, MOD-SUB
 
 Profile:
-Strong reciprocity plus non-competing commercial protection and sublicensing
-infrastructure.
+Strong reciprocity plus non-competing commercial protection and steward
+alternative-licensing infrastructure, while preserving permissive internal-only
+use under MOD-INT-A.
 
 B.3 MCL-COMMUNITY
 
@@ -1481,7 +1641,7 @@ Activated Modules:
 (none)
 
 Profile:
-Permissive v1.1 floor: notice preservation, patent grant, version stability,
+Permissive v1.1.1 floor: notice preservation, patent grant, version stability,
 and interpretive protections, without activated reciprocity modules.
 
 B.6 MCL-FILE
@@ -1506,7 +1666,9 @@ identify at least the following for the exact version in use:
 (e) exact version identifier, such as tag, commit hash, or comparable immutable
     source identifier;
 (f) if MOD-NET is active, the public service URL, API root, or network endpoint
-    description for the running version;
+    description for the running version. For elastic, ephemeral, or autoscaled
+    deployments, a stable service URL, API root, or service-class endpoint
+    description is sufficient instead of transient instance URLs;
 (g) if MOD-BIN is active, URLs and integrity digests for published deployable
     artifacts and the build-recipe location;
 (h) if Operational Materials are required, the location of those materials;
@@ -1526,9 +1688,9 @@ SUGGESTED SOURCE NOTICE
 
 Copyright [year] [name]
 
-Licensed under the Modular Cooperative License (MCL), Version 1.1.
+Licensed under the Modular Cooperative License (MCL), Version 1.1.1.
 Activated Modules for this version: [list modules or "none"]
 License text: [repository URL or local path]
-SPDX-License-Identifier: LicenseRef-MCL-1.1
+SPDX-License-Identifier: LicenseRef-MCL-1.1.1
 
 END OF LICENSE

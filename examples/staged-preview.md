@@ -21,7 +21,7 @@ full source publication catches up.
 ```text
 ====================================================================
 LICENSE ACTIVATION BLOCK
-Modular Cooperative License v1.1
+Modular Cooperative License v1.1.1
 ====================================================================
 
 Software Name:
@@ -66,7 +66,7 @@ ACTIVATED MODULES
 [ ] MOD-PUB    Public Fork Requirement
 [ ] MOD-SEC    Security Embargo and Trusted Disclosure
 [x] MOD-STAGE  Staged Preview and Deferred Publication
-[ ] MOD-SUB    Sublicensing Permission
+[ ] MOD-SUB    Steward Alternative Licensing Authority
 
 MOD-COM CONFIGURATION
 Primary Commercial Function:

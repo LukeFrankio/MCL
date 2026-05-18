@@ -4,7 +4,56 @@ This changelog tracks repository changes separately from changes to the license
 text itself.
 
 Unless an entry says otherwise, the canonical license remains **Modular
-Cooperative License Version 1.1**.
+Cooperative License Version 1.1.1**.
+
+## 2026-05-17 — v1.1.1 stress-test hardening
+
+This entry records the follow-up drafting fixes and version bump after a second,
+more aggressive stress test of the v1.1 text.
+
+### Repository updates
+
+- Updated `README.md` to explain the split between the GPLv3 bridge and the
+  AGPLv3 bridge more precisely.
+- Updated `README.md` and the example set to reflect **Version 1.1.1**.
+
+### License updates
+
+- Bumped the working text from **MCL Version 1.1** to **MCL Version 1.1.1**.
+- Split Clause `9.2` and Clause `9.3` so `MOD-NET` can follow the AGPLv3
+  compatibility path without creating a GPLv3 washing loophole.
+- Clarified that `MOD-SEC` timing controls over the `MOD-NET` 72-hour emergency
+  publication rule for qualifying embargoed security changes.
+- Added a narrow safe harbor in `MOD-PUB` for private experimental forks that
+  are never distributed, never exposed to third parties, never used in
+  production, and are discarded promptly.
+- Clarified that `MOD-AI` does not by itself prohibit ordinary interactive
+  development-tool use unless the licensee separately opts into or requests
+  model-improvement use of the covered work.
+- Clarified that `Operational Materials` and `MOD-BIN` need structural
+  reproducibility, not disclosure of account-specific or provider-assigned
+  cloud identifiers.
+- Clarified that `MOD-BIN` does not by itself erase the operative scope of an
+  active internal-use module for internal cloud deployments.
+- Clarified in the General-Purpose Tool safe harbor that ordinary configuration
+  alone does not automatically make a gateway or similar tool an Integral
+  Component.
+- Clarified that large client-side compiled logic, including WebAssembly, is
+  not automatically treated as Static Disconnected Work Product.
+- Clarified that deliberate dilution of Unified Product factors does not by
+  itself defeat Unified Product status.
+- Clarified that the affiliate or common-control shell-company pattern does not
+  defeat `MOD-PAT`.
+- Clarified that `MOD-PUB` does not force publication of strictly internal-only
+  forks while `MOD-INT-A` or `MOD-INT-B` still applies, and aligned the preset
+  descriptions with that internal-use safe harbor.
+- Clarified that cure and reinstatement do not extinguish historical monetary
+  remedies for pre-cure breach.
+- Clarified that `MOD-AI` does not treat ordinary debugging and analysis as
+  training use, but does reach repeated generative-template or RAG-style source
+  ingestion aimed at producing a substitute implementation.
+- Added a reasonable-efforts direct-notice requirement before relying on
+  contributor silence under `MOD-CLA` relicensing notice procedures.
 
 ## 2026-05-16 — v1.1 permissive-floor redesign
 

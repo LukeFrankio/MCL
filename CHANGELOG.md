@@ -4,7 +4,133 @@ This changelog tracks repository changes separately from changes to the license
 text itself.
 
 Unless an entry says otherwise, the canonical license remains **Modular
-Cooperative License Version 1.1.1**.
+Cooperative License Version 1.2.0**.
+
+## 2026-11-08 — v1.2.0 critique-driven rework
+
+This entry records a rework of v1.1.1 following a clause-by-clause critique of
+the full text. The module architecture and the purpose of every module are
+unchanged. The changes narrow overbroad definitions, fix enforcement mechanics,
+close drafting gaps, and remove the GPLv3 and AGPLv3 compatibility bridges.
+
+### Repository updates
+
+- Replaced `MCL-LICENSE` with **Version 1.2.0**.
+- Updated `README.md`: moved to v1.2.0, rewrote the compatibility notes (no
+  GNU bridge, open-source status per Clause 9.6), added a "What's new in v1.2.0"
+  section, updated the `MOD-INT-A` row, and updated the how-to-apply steps for
+  the new Annex A fields and the machine-readable `MCL-Modules:` line.
+- Updated `examples/README.md`: moved to v1.2.0 and added notes on the new Annex
+  A fields, the removal of GNU compatibility, open-source status per example,
+  and the deemed `MOD-INT-A` default.
+- Updated all 14 example Annex A blocks to the v1.2.0 template: version header,
+  `Venue`, `Permitted Uses` for `MOD-COM`, the Clause 5.8 defaults note under
+  `MOD-SEC` and `MOD-STAGE`, `Runtime Components`, and `Additional Permissions
+  and Alternative Licenses`. Filled the steward and alternative-license fields
+  for `sublicensing.md` and `commercial-cooperative.md`, and the `Permitted
+  Uses` field for `commercial-cooperative.md`.
+- Replaced the "GPL or AGPL compatibility paths" good-fit and bad-fit wording in
+  the examples that previously qualified for a bridge.
+- Added five examples for v1.2.0 features: `examples/gnu-alternative.md` (an
+  explicit AGPL option through Additional Permissions, with `MOD-CLA`),
+  `examples/compiler-toolchain.md` (Output and Runtime Components),
+  `examples/source-available-noncompete.md` (`MOD-COM` on the permissive floor,
+  `Permitted Uses`, and a delayed Apache-2.0 option),
+  `examples/personal-use-carveout.md` (`MOD-INT-C` and `MOD-PUB` with the
+  personal-use carve-outs), and `examples/compliance-and-notices.md` (Annex D
+  notices and Annex C Compliance Records, including Clause 6.2(h)).
+- Added the new examples to the `examples/README.md` index and open-source
+  status notes.
+
+### License updates
+
+**GNU compatibility**
+
+- Removed the automatic GPLv3 and AGPLv3 bridges. Clause 9.3 is now "No
+  Automatic GNU Compatibility; Licensor-Granted Additional Permissions", and
+  Clause 9.2 no longer claims compatibility with any GNU-family license. The
+  bridge could not be made non-downgrading, because adding one GNU-licensed file
+  would let a recipient shed the module terms for that copy and its descendants.
+  Copies received under 1.1.x keep the bridge that accompanied them (Clause 1.4).
+- Added the Annex A section "Additional Permissions and Alternative Licenses"
+  so a rights holder can grant GNU compatibility, or any other alternative
+  license, for its own material as a deliberate, recorded choice. `MOD-SUB` now
+  names its steward there and is declaratory.
+
+**Integral Component and related definitions**
+
+- Rewrote Clause 2.14. A component is an Integral Component if it is Specific to
+  the Covered Work and satisfies a control, mediation, core-function, or Unified
+  Product criterion (F1 to F4), or if it depends on private interfaces (F5). An
+  independent reimplementation that copies nothing does not satisfy F5.
+- Excluded general-purpose tools, including general-purpose identity providers
+  and payment processors, and Static Disconnected Work Product from Clause 2.14.
+- Made Clause 2.14 operate only as a condition on a Licensee's exercise of the
+  grant, not as a claim that a component is a Derivative Work.
+- Raised the Unified Product threshold in Clause 2.31 and added a note that a
+  shared vendor or hosting environment does not by itself create one.
+- Removed the circular "combined with it to the extent licensed" wording from
+  Clause 2.7. Clarified Separate Work as the way to rebut an Integral Component
+  presumption (Clauses 2.26, 7.2, 7.3).
+- Made `MOD-PLUG` designations a rebuttable presumption that cannot reach
+  general-purpose tools or components that are not Specific to the Covered Work
+  (Clause 6.5(b)).
+- Replaced intent-based tests with effect-plus-no-independent-justification
+  tests in Clauses 4.6 and 7.6, and made the `MOD-COM` presumption count factors
+  (i) through (iv) only (Clauses 6.10(c), 7.9).
+
+**Output and compilers**
+
+- Added Clause 3.6 (Output is not a Covered Work) and Clause 3.7 (Runtime
+  Components exception designated in Annex A). Updated Clause 2.29 accordingly.
+
+**Termination, contributions, and plumbing**
+
+- Rewrote Clause 8.1 and Clause 8.2 with provisional and permanent
+  reinstatement, a 30-day cure from notice, a good-faith classification path,
+  and preserved liability for pre-cure breach.
+- Protected downstream recipients when a Licensee's rights terminate (Clause
+  3.4).
+- Added the original release and Contributors to the patent grant (Clauses 2.4,
+  2.5, 3.2) and added inbound=outbound contribution licensing (Clause 3.8).
+- Clarified that the grants are conditioned on compliance (Clause 1.10) and what
+  happens when Annex A is missing or unclear (Clause 1.9).
+- Defined Licensee and User (Clauses 2.33 and 2.34), and made `MOD-INT-A` deemed
+  active when no `MOD-INT` variant is marked (Clause 5.5).
+- Added defaults for blank `MOD-SEC` and `MOD-STAGE` fields (Clause 5.8).
+- Added a Venue field and a governing-law default that works with multiple
+  Licensors (Clause 8.5), and a duty to substantiate exemption claims on request
+  (Clause 4.7).
+- Reserved Clauses 4.4 and 4.5 and cleaned up stacked "and" connectors in Clauses
+  6.1, 6.3, 6.4, 6.7 through 6.11, and Annex C.
+
+**Modules**
+
+- `MOD-NET`: added a lightweight path for unmodified upstream operation (Clause
+  6.2(h)) and a matching retention rule (Clause 7.7).
+- `MOD-BIN`: clarified that private mirrors serving digest-identified public
+  content are not non-public, that bit-for-bit reproducibility is not required,
+  and replaced "material breach" with a plain failure-to-satisfy statement
+  (Clause 6.3).
+- `MOD-PUB`, `MOD-INT-C`, and `MOD-INT-D`: added a personal-use carve-out for
+  natural persons (Clauses 6.4(j), 6.8(e), 6.9(e)) and extended Internal Use to
+  natural persons and rented infrastructure (Clause 2.15).
+- `MOD-AI`: added an express reservation of rights, a machine-readable
+  reservation recommendation, and a statement that the module does not override
+  statutory exceptions that cannot be limited by contract (Clause 6.11).
+- `MOD-COM`: added a `Permitted Uses` list in Annex A (Clause 6.10(g)).
+- `MOD-CLA`: made the Licensor's obligations enforceable by Contributors as
+  third-party beneficiaries to the extent permitted by law (Clause 6.15(h)).
+
+**Open-source status and metadata**
+
+- Added Clause 9.6 stating which modules are not open source in the OSI sense
+  (`MOD-AI`, `MOD-COM`, `MOD-PUB`, `MOD-SEC`, `MOD-STAGE`, `MOD-INT-B`,
+  `MOD-INT-C`, `MOD-INT-D`) and which go beyond conventional network copyleft
+  (`MOD-BIN`, `MOD-PLUG`). Added Note 3 and the per-module statements.
+- Updated SPDX guidance to recommend preset-specific identifiers and a
+  machine-readable `MCL-Modules:` line (Clauses 9.1, 9.4, Annex D).
+- Updated Annex A, Annex B, and Annex C (new item (n)) for Version 1.2.0.
 
 ## 2026-05-17 — v1.1.1 stress-test hardening
 

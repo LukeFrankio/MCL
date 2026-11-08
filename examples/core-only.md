@@ -1,6 +1,6 @@
 # Core-only example
 
-This example shows the most permissive MCL v1.1.1 posture: the base terms only,
+This example shows the most permissive MCL v1.2.0 posture: the base terms only,
 with no optional modules activated.
 
 ## Good fit
@@ -13,13 +13,15 @@ with no optional modules activated.
 - Projects that want file-level reciprocity for distributed modifications
 - Projects that want strong SaaS reciprocity, cloud-binary publication,
   anti-shim enforcement, or commercial restrictions
+- Projects that want automatic GPL or AGPL compatibility (MCL v1.2.0 has none;
+  see Clause 9.3)
 
 ## Filled Annex A
 
 ```text
 ====================================================================
 LICENSE ACTIVATION BLOCK
-Modular Cooperative License v1.1.1
+Modular Cooperative License v1.2.0
 ====================================================================
 
 Software Name:
@@ -39,6 +41,9 @@ https://code.example/slate-notes
 
 Governing Law:
 Delaware, United States
+
+Venue (optional):
+Not specified; the Clause 8.5 defaults apply.
 
 Notification Method for MOD-PUB:
 [ ] Issue or pull request in the primary repository
@@ -70,6 +75,9 @@ MOD-COM CONFIGURATION
 Primary Commercial Function:
 Not applicable because MOD-COM is inactive.
 
+Permitted Uses (optional):
+Not applicable because MOD-COM is inactive.
+
 MOD-PLUG CONFIGURATION
 Documented Extension API Location:
 Not applicable because MOD-PLUG is inactive.
@@ -78,6 +86,7 @@ Integral Component Designations Beyond the Default Definition:
 Not applicable because MOD-PLUG is inactive.
 
 MOD-SEC CONFIGURATION
+(Blank fields take the defaults in Clause 5.8.)
 Trusted Actor Categories:
 Not applicable because MOD-SEC is inactive.
 
@@ -91,6 +100,7 @@ Permitted Non-Public Materials:
 Not applicable because MOD-SEC is inactive.
 
 MOD-STAGE CONFIGURATION
+(Blank fields take the defaults in Clause 5.8.)
 Permitted Preview Channels or Recipients:
 Not applicable because MOD-STAGE is inactive.
 
@@ -109,6 +119,17 @@ Not applicable because MOD-CLA is inactive.
 
 Permitted Relicensing Scope:
 Not applicable because MOD-CLA is inactive.
+
+RUNTIME COMPONENTS (Clause 3.7)
+Runtime Components:
+none
+
+ADDITIONAL PERMISSIONS AND ALTERNATIVE LICENSES (Clause 9.3, MOD-SUB)
+Steward (if MOD-SUB is active):
+Not applicable because MOD-SUB is inactive.
+
+Additional Permissions or Alternative Licenses Granted by Rights Holders:
+none
 
 ADDITIONAL PROJECT-SPECIFIC CLARIFICATIONS
 No additional project-specific clarifications.

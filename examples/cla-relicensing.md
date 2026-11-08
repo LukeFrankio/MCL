@@ -13,13 +13,15 @@ module.
 
 - Informal community projects with no CLA operations
 - Single-rightsholder projects that only need direct sublicensing authority
+- Projects that want automatic GPL or AGPL compatibility (MCL v1.2.0 has none;
+  see Clause 9.3)
 
 ## Filled Annex A
 
 ```text
 ====================================================================
 LICENSE ACTIVATION BLOCK
-Modular Cooperative License v1.1.1
+Modular Cooperative License v1.2.0
 ====================================================================
 
 Software Name:
@@ -39,6 +41,9 @@ https://git.example/nimbus/toolkit
 
 Governing Law:
 Virginia, United States
+
+Venue (optional):
+Not specified; the Clause 8.5 defaults apply.
 
 Notification Method for MOD-PUB:
 [ ] Issue or pull request in the primary repository
@@ -70,6 +75,9 @@ MOD-COM CONFIGURATION
 Primary Commercial Function:
 Not applicable because MOD-COM is inactive.
 
+Permitted Uses (optional):
+Not applicable because MOD-COM is inactive.
+
 MOD-PLUG CONFIGURATION
 Documented Extension API Location:
 https://developer.nimbustoolkit.example/extensions
@@ -78,6 +86,7 @@ Integral Component Designations Beyond the Default Definition:
 See INTEGRAL_COMPONENTS.md
 
 MOD-SEC CONFIGURATION
+(Blank fields take the defaults in Clause 5.8.)
 Trusted Actor Categories:
 Not applicable because MOD-SEC is inactive.
 
@@ -91,6 +100,7 @@ Permitted Non-Public Materials:
 Not applicable because MOD-SEC is inactive.
 
 MOD-STAGE CONFIGURATION
+(Blank fields take the defaults in Clause 5.8.)
 Permitted Preview Channels or Recipients:
 Not applicable because MOD-STAGE is inactive.
 
@@ -110,6 +120,17 @@ https://nimbustoolkit.example/legal/cla
 Permitted Relicensing Scope:
 Future MCL versions, Apache-2.0 for selected utility subprojects, and direct
 commercial licenses issued by the project steward.
+
+RUNTIME COMPONENTS (Clause 3.7)
+Runtime Components:
+none
+
+ADDITIONAL PERMISSIONS AND ALTERNATIVE LICENSES (Clause 9.3, MOD-SUB)
+Steward (if MOD-SUB is active):
+Not applicable because MOD-SUB is inactive.
+
+Additional Permissions or Alternative Licenses Granted by Rights Holders:
+none
 
 ADDITIONAL PROJECT-SPECIFIC CLARIFICATIONS
 Contributions are accepted only under the published CLA for releases that keep

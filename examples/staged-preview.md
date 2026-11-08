@@ -21,7 +21,7 @@ full source publication catches up.
 ```text
 ====================================================================
 LICENSE ACTIVATION BLOCK
-Modular Cooperative License v1.1.1
+Modular Cooperative License v1.2.0
 ====================================================================
 
 Software Name:
@@ -41,6 +41,9 @@ https://git.example/nimbus/console
 
 Governing Law:
 Washington, United States
+
+Venue (optional):
+Not specified; the Clause 8.5 defaults apply.
 
 Notification Method for MOD-PUB:
 [ ] Issue or pull request in the primary repository
@@ -72,6 +75,9 @@ MOD-COM CONFIGURATION
 Primary Commercial Function:
 Not applicable because MOD-COM is inactive.
 
+Permitted Uses (optional):
+Not applicable because MOD-COM is inactive.
+
 MOD-PLUG CONFIGURATION
 Documented Extension API Location:
 https://developer.nimbusconsole.example/extensions
@@ -80,6 +86,7 @@ Integral Component Designations Beyond the Default Definition:
 See INTEGRAL_COMPONENTS.md
 
 MOD-SEC CONFIGURATION
+(Blank fields take the defaults in Clause 5.8.)
 Trusted Actor Categories:
 Not applicable because MOD-SEC is inactive.
 
@@ -93,6 +100,7 @@ Permitted Non-Public Materials:
 Not applicable because MOD-SEC is inactive.
 
 MOD-STAGE CONFIGURATION
+(Blank fields take the defaults in Clause 5.8.)
 Permitted Preview Channels or Recipients:
 Employees, design partners, authenticated nightly users, and public beta users
 when a release is clearly labeled as preview.
@@ -114,6 +122,17 @@ Not applicable because MOD-CLA is inactive.
 
 Permitted Relicensing Scope:
 Not applicable because MOD-CLA is inactive.
+
+RUNTIME COMPONENTS (Clause 3.7)
+Runtime Components:
+none
+
+ADDITIONAL PERMISSIONS AND ALTERNATIVE LICENSES (Clause 9.3, MOD-SUB)
+Steward (if MOD-SUB is active):
+Not applicable because MOD-SUB is inactive.
+
+Additional Permissions or Alternative Licenses Granted by Rights Holders:
+none
 
 ADDITIONAL PROJECT-SPECIFIC CLARIFICATIONS
 All public preview builds must be labeled as preview or beta releases while

@@ -12,14 +12,15 @@ licensing authority, and CLA infrastructure.
 ## Bad fit
 
 - Community projects seeking OSI-style norms
-- Projects that want GPL or AGPL compatibility paths
+- Projects that want automatic GPL or AGPL compatibility (MCL v1.2.0 has none;
+  see Clause 9.3)
 
 ## Filled Annex A
 
 ```text
 ====================================================================
 LICENSE ACTIVATION BLOCK
-Modular Cooperative License v1.1.1
+Modular Cooperative License v1.2.0
 ====================================================================
 
 Software Name:
@@ -39,6 +40,9 @@ https://code.example/northwind/boards
 
 Governing Law:
 Texas, United States
+
+Venue (optional):
+Not specified; the Clause 8.5 defaults apply.
 
 Notification Method for MOD-PUB:
 [ ] Issue or pull request in the primary repository
@@ -70,6 +74,11 @@ MOD-COM CONFIGURATION
 Primary Commercial Function:
 A hosted multi-tenant project-planning and kanban service for enterprise teams.
 
+Permitted Uses (optional):
+Self-hosted deployment by an organization for its own projects, and use of
+the covered work as a component of a product that does not replicate the hosted
+planning service.
+
 MOD-PLUG CONFIGURATION
 Documented Extension API Location:
 https://developer.northwindboards.example/extensions
@@ -79,6 +88,7 @@ The hosted entitlement gateway and policy engine are designated Integral
 Components for public SaaS releases.
 
 MOD-SEC CONFIGURATION
+(Blank fields take the defaults in Clause 5.8.)
 Trusted Actor Categories:
 Not applicable because MOD-SEC is inactive.
 
@@ -92,6 +102,7 @@ Permitted Non-Public Materials:
 Not applicable because MOD-SEC is inactive.
 
 MOD-STAGE CONFIGURATION
+(Blank fields take the defaults in Clause 5.8.)
 Permitted Preview Channels or Recipients:
 Not applicable because MOD-STAGE is inactive.
 
@@ -111,6 +122,19 @@ https://northwindboards.example/legal/cla
 Permitted Relicensing Scope:
 Future MCL versions and commercial licenses issued directly by Northwind Boards,
 Inc.
+
+RUNTIME COMPONENTS (Clause 3.7)
+Runtime Components:
+none
+
+ADDITIONAL PERMISSIONS AND ALTERNATIVE LICENSES (Clause 9.3, MOD-SUB)
+Steward (if MOD-SUB is active):
+Northwind Boards, Inc.
+
+Additional Permissions or Alternative Licenses Granted by Rights Holders:
+Separate commercial licenses issued directly by Northwind Boards, Inc. for
+material to which it holds the necessary rights. No GPL or AGPL alternative is
+granted.
 
 ADDITIONAL PROJECT-SPECIFIC CLARIFICATIONS
 Support and managed-service offerings are not exempt from MOD-COM if they are

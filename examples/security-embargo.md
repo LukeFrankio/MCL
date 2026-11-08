@@ -21,7 +21,7 @@ operators can receive patches before the full source disclosure becomes public.
 ```text
 ====================================================================
 LICENSE ACTIVATION BLOCK
-Modular Cooperative License v1.1.1
+Modular Cooperative License v1.2.0
 ====================================================================
 
 Software Name:
@@ -41,6 +41,9 @@ https://code.example/iron-gate/proxy
 
 Governing Law:
 Virginia, United States
+
+Venue (optional):
+Not specified; the Clause 8.5 defaults apply.
 
 Notification Method for MOD-PUB:
 [ ] Issue or pull request in the primary repository
@@ -73,6 +76,9 @@ MOD-COM CONFIGURATION
 Primary Commercial Function:
 Not applicable because MOD-COM is inactive.
 
+Permitted Uses (optional):
+Not applicable because MOD-COM is inactive.
+
 MOD-PLUG CONFIGURATION
 Documented Extension API Location:
 https://developer.irongateproxy.example/extensions
@@ -81,6 +87,7 @@ Integral Component Designations Beyond the Default Definition:
 See INTEGRAL_COMPONENTS.md
 
 MOD-SEC CONFIGURATION
+(Blank fields take the defaults in Clause 5.8.)
 Trusted Actor Categories:
 Downstream Linux distribution maintainers, managed service operators, and
 contracted incident-response partners under written security coordination terms.
@@ -97,6 +104,7 @@ Source patches, patched binaries, mitigation instructions, deployment notes, and
 non-secret operational materials reasonably necessary for defensive rollout.
 
 MOD-STAGE CONFIGURATION
+(Blank fields take the defaults in Clause 5.8.)
 Permitted Preview Channels or Recipients:
 Not applicable because MOD-STAGE is inactive.
 
@@ -115,6 +123,17 @@ Not applicable because MOD-CLA is inactive.
 
 Permitted Relicensing Scope:
 Not applicable because MOD-CLA is inactive.
+
+RUNTIME COMPONENTS (Clause 3.7)
+Runtime Components:
+none
+
+ADDITIONAL PERMISSIONS AND ALTERNATIVE LICENSES (Clause 9.3, MOD-SUB)
+Steward (if MOD-SUB is active):
+Not applicable because MOD-SUB is inactive.
+
+Additional Permissions or Alternative Licenses Granted by Rights Holders:
+none
 
 ADDITIONAL PROJECT-SPECIFIC CLARIFICATIONS
 MOD-SEC is intended only for defensive patch coordination and may not be used to

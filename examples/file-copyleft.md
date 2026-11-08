@@ -1,6 +1,6 @@
 # File-copyleft example
 
-This example shows the weak reciprocal layer in MCL v1.1.1. It activates
+This example shows the weak reciprocal layer in MCL v1.2.0. It activates
 `MOD-FILE` so distributed modified files stay under MCL and their source is made
 available, while the larger surrounding work does not automatically become
 whole-work copyleft.
@@ -16,13 +16,15 @@ whole-work copyleft.
 - Projects that want the permissive no-module floor
 - Projects that want full distribution copyleft or network copyleft
 - Projects that want stronger commercial or internal-use restrictions
+- Projects that want automatic GPL or AGPL compatibility (MCL v1.2.0 has none;
+  see Clause 9.3)
 
 ## Filled Annex A
 
 ```text
 ====================================================================
 LICENSE ACTIVATION BLOCK
-Modular Cooperative License v1.1.1
+Modular Cooperative License v1.2.0
 ====================================================================
 
 Software Name:
@@ -42,6 +44,9 @@ https://code.example/quartz/forms
 
 Governing Law:
 Oregon, United States
+
+Venue (optional):
+Not specified; the Clause 8.5 defaults apply.
 
 Notification Method for MOD-PUB:
 [ ] Issue or pull request in the primary repository
@@ -73,6 +78,9 @@ MOD-COM CONFIGURATION
 Primary Commercial Function:
 Not applicable because MOD-COM is inactive.
 
+Permitted Uses (optional):
+Not applicable because MOD-COM is inactive.
+
 MOD-PLUG CONFIGURATION
 Documented Extension API Location:
 Not applicable because MOD-PLUG is inactive.
@@ -81,6 +89,7 @@ Integral Component Designations Beyond the Default Definition:
 Not applicable because MOD-PLUG is inactive.
 
 MOD-SEC CONFIGURATION
+(Blank fields take the defaults in Clause 5.8.)
 Trusted Actor Categories:
 Not applicable because MOD-SEC is inactive.
 
@@ -94,6 +103,7 @@ Permitted Non-Public Materials:
 Not applicable because MOD-SEC is inactive.
 
 MOD-STAGE CONFIGURATION
+(Blank fields take the defaults in Clause 5.8.)
 Permitted Preview Channels or Recipients:
 Not applicable because MOD-STAGE is inactive.
 
@@ -112,6 +122,17 @@ Not applicable because MOD-CLA is inactive.
 
 Permitted Relicensing Scope:
 Not applicable because MOD-CLA is inactive.
+
+RUNTIME COMPONENTS (Clause 3.7)
+Runtime Components:
+none
+
+ADDITIONAL PERMISSIONS AND ALTERNATIVE LICENSES (Clause 9.3, MOD-SUB)
+Steward (if MOD-SUB is active):
+Not applicable because MOD-SUB is inactive.
+
+Additional Permissions or Alternative Licenses Granted by Rights Holders:
+none
 
 ADDITIONAL PROJECT-SPECIFIC CLARIFICATIONS
 Distributed modified files remain under MCL when MOD-FILE is active, but the
